@@ -24,7 +24,7 @@
 					<ul class="nav navbar-nav">
 						<li class="btn-group btn-input dropdown">
 							<button type="button" class="btn btn-default dropdown-toggle form-control navButton" data-toggle="dropdown">
-								<span data-bind="label"><span data-bind="label" class="glyphicon glyphicon-list-alt"></span><strong> Categories</strong></span>
+								<span data-bind="label"><span data-bind="label" id="search-icon" class="glyphicon glyphicon-list-alt"></span><strong id="search-category"> Categories</strong></span>
 							</button>
 							<ul class="parentMenu dropdown-menu" role="menu">
 								<li class="dropdown dropdown-submenu"><a href="#"><span class="glyphicon glyphicon-phone"></span> Electronics</a>

@@ -137,27 +137,54 @@ $(function(){
 // });
 
 $(function(){
- $(document.body).on('click', '.dropdown-menu li', function (event) {
 
-     var $target = $(event.currentTarget);
-     var icon_html = $target.find('span:first').clone().wrap('<p/>').parent().html();
-     var $parent_maybe = $target.parents('.dropdown:last');
-     if($parent_maybe.length) {
-         icon_html = $parent_maybe.find('span:first').clone().wrap('<p/>').parent().html();
-     }
-     var target_text = $target.find('a:first').text()
+    $('.dropdown-menu li').on('click', function(evt){
+        var $tar,
+        $navBarIcon,
+        newIconClass;
+        
 
-     $target.closest('.btn-group')
-     .find('[data-bind="label"]').html(icon_html + target_text)
-     .end()
-     .children('.dropdown-toggle').dropdown('toggle');
+        $tar = $(evt.target);
+        //find the text of search-category class and set it to the text of target
+        $('#search-category').text(" " + $tar.text());
+        $navBarIcon = $('#search-icon');
+        //removes previous class from search icon
+        $navBarIcon.removeClass($navBarIcon.get(0).classList[1]);
+        //if target has a glyphicon
+        if($tar.find('.glyphicon').length){
+        //get the second class name
+            newIconClass = $tar.find('.glyphicon').get(0).classList[1];
+        } else {
+        //if target doesn't have a glyphicon get the parent icon
+            newIconClass = $tar.closest('.dropdown').find('.glyphicon').get(0).classList[1];
+        }
+        //updates search icon with new class
+        $navBarIcon.addClass(newIconClass);
 
-     return false;
 
- });
+    })
+
+ // $(document.body).on('click', '.dropdown-menu li', function (event) {
+
+ //     var $target = $(event.currentTarget);
+ //     var icon_html = $target.find('span:first').clone().wrap('<p/>').parent().html();
+ //     var $parent_maybe = $target.parents('.dropdown:last');
+ //     if($parent_maybe.length) {
+ //         icon_html = $parent_maybe.find('span:first').clone().wrap('<p/>').parent().html();
+ //     }
+ //     var target_text = $target.find('a:first').text()
+
+ //     $target.closest('.btn-group')
+ //     .find('[data-bind="label"]').html(icon_html + target_text)
+ //     .end()
+ //     .children('.dropdown-toggle').dropdown('toggle');
+
+ //     return false;
+
+ // });
 });
 
 $('.list-group-item').on('click',function(){
     $(".list-group-item.active").removeClass("active");
     $(this).addClass('active');
-  });
+});

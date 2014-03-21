@@ -1,0 +1,1 @@
+You've successfully created a news item!

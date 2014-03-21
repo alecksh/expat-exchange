@@ -112,9 +112,4 @@
   </div>
 </div>
 
-<script>
-$('.list-group-item').on('click',function(){
-    $(".list-group-item.active").removeClass("active");
-    $(this).addClass('active');
-  });
-</script>
+

@@ -26,7 +26,7 @@
 							<button type="button" class="btn btn-default dropdown-toggle form-control navButton" data-toggle="dropdown">
 								<span data-bind="label"><span data-bind="label" id="search-icon" class="glyphicon glyphicon-list-alt"></span><strong id="search-category"> Categories</strong></span>
 							</button>
-							<ul class="parentMenu dropdown-menu" role="menu">
+							<ul class="parentMenu category-dropdown dropdown-menu" role="menu">
 								<li class="dropdown dropdown-submenu"><a href="#"><span class="glyphicon glyphicon-phone"></span> Electronics</a>
 									<ul class="dropdown-menu">
 										<li><a href="#">Cameras</a></li>
@@ -111,9 +111,9 @@
 						</li>
 						<li class="btn-group btn-input dropdown">
 							<button type="button" class="btn btn-default dropdown-toggle form-control navButton" data-toggle="dropdown">
-								<span data-bind="label"><span data-bind="label" class="glyphicon glyphicon-map-marker"></span> Location</span>
+								<span data-bind="label"><span data-bind="label" class="glyphicon glyphicon-map-marker"></span><span id="parent-location"> Location</span></span>
 							</button>
-							<ul class="parentMenu dropdown-menu">
+							<ul class="parentMenu location-dropdown dropdown-menu">
 								<li class="dropdown dropdown-submenu"><a href="#">Subway Line 1</a>
 									<ul class="dropdown-menu" id="dropdown-list">
 										<li><a href="#">Daegok</a></li>
